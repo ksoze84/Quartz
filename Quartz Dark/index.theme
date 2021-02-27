@@ -7,6 +7,6 @@ Encoding=UTF-8
 [X-GNOME-Metatheme]
 GtkTheme=Quartz Dark
 MetacityTheme=Quartz Dark
-IconTheme=Luna-Light
-CursorTheme=Luna-Light
+IconTheme=Luna-Dark
+CursorTheme=Luna
 CursorSize=24
