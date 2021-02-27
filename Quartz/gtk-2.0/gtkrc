@@ -1,7 +1,7 @@
 
 # GTK originally based on Ubuntu Human code
 
-gtk_color_scheme = "fg_color:#000\nbg_color:#eee\nbase_color:#fff\ntext_color:#000\nselected_bg_color:#00877A\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\npanel_bg_color:#000\npanel_fg_color:#fff"
+gtk_color_scheme = "fg_color:#000\nbg_color:#eee\nbase_color:#fff\ntext_color:#000\nselected_bg_color:#009688\nselected_fg_color:#fff\ntooltip_bg_color:#000\ntooltip_fg_color:#fff\npanel_bg_color:#000\npanel_fg_color:#fff"
 
 # Comment the following line for large buttons
 gtk-icon-sizes = "gtk-button=16,16"
@@ -131,12 +131,15 @@ style "murrine-entry" = "murrine-wider"{
 	fg[NORMAL]	=	@fg_color
 	fg[SELECTED]	=	@fg_color
 	
+	base[NORMAL]                  = mix(0.9,@bg_color,@fg_color)
+	
 	engine "murrine" {
 		contrast                = 0.0
 		reliefstyle	     = 0
-		roundness			= 0
+		roundness			= 3
 		focusstyle              = 1
 		shadow_shades           = { 0.0, 0.0 }
+		border_shades			= { 1.3, 1.3}
 	}
 }
 
@@ -152,7 +155,7 @@ style "murrine-button" = "murrine-wider"{
 	bg[ACTIVE]                  = mix(0.8,@bg_color,@fg_color)
 	bg[NORMAL]                  = mix(0.9,@bg_color,@fg_color)
 	bg[PRELIGHT]				= mix(0.85,@bg_color,@fg_color)
-	bg[SELECTED]				= @selected_bg_color
+	bg[SELECTED]				= mix(0.6,@bg_color,@selected_bg_color)
 	bg[INSENSITIVE]				= @bg_color
 	
 	engine "murrine" {
@@ -200,8 +203,8 @@ engine "murrine" {
 style "murrine-menu" = "murrine-wider"
 {
 
-  xthickness = 0
-  ythickness = 2
+  xthickness = 4
+  ythickness = 4
 
 	bg[NORMAL] = @base_color
 
@@ -230,6 +233,7 @@ style "murrine-menu-item"
 engine "murrine"
 	{
 		contrast                = 0.0
+		roundness				= 3
 
 	}
 }
@@ -387,9 +391,9 @@ style "murrine-nautilus-location"
 
 style "murrine-radiocheck" 
 {
-	text[NORMAL]   = @selected_fg_color            # Text in window
-	text[PRELIGHT] = @selected_fg_color            # Text on Mouseover
-	text[ACTIVE]   = @selected_fg_color             # Text on click
+	text[NORMAL]   = @selected_bg_color            # Text in window
+	text[PRELIGHT] = @selected_bg_color            # Text on Mouseover
+	text[ACTIVE]   = @selected_bg_color             # Text on click
 
 	bg[SELECTED] = @base_color
 
