@@ -18,7 +18,7 @@
 @define-color theme_fg_color black;
 @define-color theme_text_color @theme_fg_color;
 @define-color theme_bg_color #eee;
-@define-color theme_base_color mix(@theme_bg_color,white,0.9);
+@define-color theme_base_color #fff;
 
 @define-color theme_unfocused_fg_color @theme_fg_color;
 @define-color theme_unfocused_text_color @theme_fg_color;
